@@ -1,0 +1,24 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id: input_number
+            text: "34"
+            font_size: 24
+            multiline: False
+        BoxLayout:
+            orientation: 'vertical'
+            Button:
+                text: "Up"
+                on_press: app.handle_increment(input_number.text, "1")
+            Button:
+                text: "Down"
+                on_press: app.handle_increment(input_number.text, "-1")
+    Button:
+        text: "Convert mi to km"
+        on_press: app.handle_calculation(int(input_number.text))
+    Label:
+        id: output_label
+        font_size: 24
+        color: (1,0,0.5,1) #change this to yellow"
